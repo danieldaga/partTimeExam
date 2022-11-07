@@ -2,18 +2,17 @@
 
 // Escribe una función que acepte un número y muestre por consola una cuenta atrás, es decir, una lista de numeros desde el número tecleado hasta el 0. 
 //Después, debe mostrar por consola la cuenta desde 0 hasta el número introducido. 
+
 function descCount(num) {
-        for (let i = num; i >= 0; i--) {
-        console.log(i);
-    
+    for (let i = num; i >= 0; i--) {
+        console.log(i)
     }
-    
 }
 descCount(15)
 
 function asCount(num) {
-    for (let i = 0; i < num + 1; i++) {
-        console.log(i);
+    for (let i = 0; i <= num; i++) {
+        console.log(i)
 
     }
 }
@@ -36,31 +35,31 @@ asCount(15)
 //  13.5 Recuerda: la primera regla del Club de la Kata, es que nadie habla del Club de la Kata...
 
 
-let dani = {
+let dani = {    //13.1
     name: 'Dani',
     HP: 120,
     damage: 25,
 }
-let pablo = {
+let pablo = {  //13.1
     name: 'Pablo',
     HP: 100,
     damage: 19,
 }
-    dani.attack = (enemy) => enemy.HP -= dani.damage
-    pablo.attack= (enemy) => enemy.HP -= pablo.damage
-    
-console.log(dani, pablo);
+dani.attack = (enemy) => enemy.HP -= dani.damage  //13.2
+pablo.attack = (enemy) => enemy.HP -= pablo.damage //13.2
 
-function fight(playerOne, playerTwo) {
+console.log(dani, pablo)
+
+function fight(playerOne, playerTwo) {     //13.4
 
     let numberOfAttack = 0
     while (playerTwo.HP > 0) {
         playerOne.attack(playerTwo)
         numberOfAttack++
-        console.log(playerTwo);
+        console.log(playerTwo)
     }
     console.log(`${playerOne.name} ha derrotado a ${playerTwo.name} en ${numberOfAttack} rondas`)
-
 }
+
 fight(dani, pablo)
 
