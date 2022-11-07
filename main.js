@@ -7,22 +7,18 @@ function descCount(num) {
     for (let i = num; i >= 0; i--) {
         console.log(i)
     }
-}
-descCount(15)
-
-function asCount(num) {
     for (let i = 0; i <= num; i++) {
         console.log(i)
-
     }
+    return
 }
-asCount(15)
+descCount(8)
 
 
 
 
 
-//kataClub El club de la Kata
+//El club de la Kata
 
 //  13.1 Crea dos objetos llamados Dani y Pablo. Dales las propiedades `name`, `healthPoints` y `attackDamage`: Dani tendrá 120 `HP` y 25 de `damage`; Pablo tendrá 100 `HP`y 19 de `damage`.
 
@@ -35,30 +31,33 @@ asCount(15)
 //  13.5 Recuerda: la primera regla del Club de la Kata, es que nadie habla del Club de la Kata...
 
 
-let dani = {    //13.1
+let dani = {                                        //13.1
     name: 'Dani',
     HP: 120,
     damage: 25,
 }
-let pablo = {  //13.1
+let pablo = {                                        //13.1
     name: 'Pablo',
-    HP: 100,
+    HP: 150
+    ,
     damage: 19,
 }
-dani.attack = (enemy) => enemy.HP -= dani.damage  //13.2
-pablo.attack = (enemy) => enemy.HP -= pablo.damage //13.2
+dani.attack = (enemy) => enemy.HP -= dani.damage     //13.2
+pablo.attack = (enemy) => enemy.HP -= pablo.damage   //13.2
 
 console.log(dani, pablo)
 
-function fight(playerOne, playerTwo) {     //13.4
+function fight(playerOne, playerTwo) {               //13.4
 
     let numberOfAttack = 0
-    while (playerTwo.HP > 0) {
+
+    while (playerTwo.HP > 0 && playerOne.HP > 0) {
         playerOne.attack(playerTwo)
+        playerTwo.attack(playerOne)
         numberOfAttack++
-        console.log(playerTwo)
+        console.log(playerTwo, playerOne)
     }
-    console.log(`${playerOne.name} ha derrotado a ${playerTwo.name} en ${numberOfAttack} rondas`)
+    return console.log(`${playerOne.name} ha derrotado a ${playerTwo.name} en ${numberOfAttack} rondas`)
 }
 
 fight(dani, pablo)
